@@ -6,7 +6,7 @@ Supported hardcoded models:
 - `pixverse:lipsync@1`
 - `klingai:7@1`
 
-## Required (shortest)
+## Example
 
 ```bash
 npm run lipsync:runware -- /path/to/reference-video.mp4 --audio /path/to/audio.wav --model pixverse:lipsync@1
