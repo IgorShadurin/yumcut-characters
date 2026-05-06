@@ -81,6 +81,41 @@ function isStillProcessing(envelope: RunwareEnvelope, taskUUID: string): boolean
   return false;
 }
 
+function buildInferenceTask(
+  options: CliOptions,
+  taskUUID: string,
+  referenceVideo: string,
+  inputAudio: string
+): Record<string, unknown> {
+  const base: Record<string, unknown> = {
+    taskType: 'videoInference',
+    taskUUID,
+    model: options.model,
+    deliveryMethod: 'async',
+    outputType: 'URL',
+    outputFormat: 'MP4',
+    includeCost: options.includeCost,
+  };
+
+  if (options.model === 'klingai:7@1') {
+    return {
+      ...base,
+      // KlingAI Lip-Sync uses model-specific inputs.video + inputs.audio fields.
+      inputs: {
+        video: referenceVideo,
+        audio: inputAudio,
+      },
+    };
+  }
+
+  return {
+    ...base,
+    // PixVerse LipSync accepts referenceVideos + inputAudios.
+    referenceVideos: [referenceVideo],
+    inputAudios: [inputAudio],
+  };
+}
+
 export async function generateLipsyncVideo(
   apiKey: string,
   options: CliOptions,
@@ -89,19 +124,7 @@ export async function generateLipsyncVideo(
 ): Promise<LipsyncTaskResult> {
   const taskUUID = randomUUID();
 
-  const submitEnvelope = await postRunware(apiKey, [
-    {
-      taskType: 'videoInference',
-      taskUUID,
-      model: options.model,
-      deliveryMethod: 'async',
-      outputType: 'URL',
-      outputFormat: 'MP4',
-      includeCost: options.includeCost,
-      referenceVideos: [referenceVideo],
-      inputAudios: [inputAudio],
-    },
-  ]);
+  const submitEnvelope = await postRunware(apiKey, [buildInferenceTask(options, taskUUID, referenceVideo, inputAudio)]);
 
   const submitErrors = collectErrors(submitEnvelope);
   if (submitErrors.length > 0) {
