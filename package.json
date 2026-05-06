@@ -1,0 +1,17 @@
+{
+  "name": "yumcut-characters",
+  "version": "1.0.0",
+  "description": "Tooling for yumcut.com characters workflows",
+  "main": "scripts/character-sync/index.js",
+  "scripts": {
+    "character:sync": "node scripts/character-sync/index.js",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "dotenv": "^17.4.2"
+  }
+}
