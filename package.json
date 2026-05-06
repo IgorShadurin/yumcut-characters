@@ -2,9 +2,8 @@
   "name": "yumcut-characters",
   "version": "1.0.0",
   "description": "Tooling for yumcut.com characters workflows",
-  "main": "scripts/character-sync/index.ts",
+  "main": "scripts/lipsync-runware/index.ts",
   "scripts": {
-    "character:sync": "tsx scripts/character-sync/index.ts",
     "lipsync:runware": "tsx scripts/lipsync-runware/index.ts",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
