@@ -5,6 +5,7 @@
   "main": "scripts/character-sync/index.ts",
   "scripts": {
     "character:sync": "tsx scripts/character-sync/index.ts",
+    "lipsync:runware": "tsx scripts/lipsync-runware/index.ts",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "echo \"No tests configured\""
