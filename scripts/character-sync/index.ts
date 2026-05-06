@@ -1,6 +1,6 @@
-const { loadConfig } = require('./helpers/env');
+import { loadConfig } from './helpers/env';
 
-function main() {
+function main(): void {
   const config = loadConfig();
 
   console.log('Character sync tool is configured.');

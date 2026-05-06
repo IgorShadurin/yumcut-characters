@@ -1,8 +1,10 @@
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
+
+import type { CharacterSyncConfig } from '../interfaces/config';
 
 dotenv.config();
 
-function readEnv(name) {
+function readEnv(name: string): string {
   const value = process.env[name];
 
   if (!value || !value.trim()) {
@@ -12,13 +14,9 @@ function readEnv(name) {
   return value.trim();
 }
 
-function loadConfig() {
+export function loadConfig(): CharacterSyncConfig {
   return {
     apiKey: readEnv('YUMCUT_API_KEY'),
     apiUrl: readEnv('YUMCUT_API_URL'),
   };
 }
-
-module.exports = {
-  loadConfig,
-};

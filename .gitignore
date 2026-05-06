@@ -5,3 +5,4 @@ node_modules/
 !.example.env
 .DS_Store
 npm-debug.log*
+.idea/

@@ -2,16 +2,25 @@
   "name": "yumcut-characters",
   "version": "1.0.0",
   "description": "Tooling for yumcut.com characters workflows",
-  "main": "scripts/character-sync/index.js",
+  "main": "scripts/character-sync/index.ts",
   "scripts": {
-    "character:sync": "node scripts/character-sync/index.js",
+    "character:sync": "tsx scripts/character-sync/index.ts",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
     "test": "echo \"No tests configured\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
-    "dotenv": "^17.4.2"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.6.0",
+    "dotenv": "^17.4.2",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.2"
   }
 }
