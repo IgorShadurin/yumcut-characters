@@ -18,3 +18,4 @@ Rules:
 - Example report path format: `tmp/lipsync-runware/video-3-lipsync.json`.
 - Never commit secrets; store local secrets in `.env`.
 - When a requested change is done, commit only if tests, lint, and type checks pass.
+- Use conventional commit messages (for example `feat:`, `fix:`, `docs:`, `chore:`).
