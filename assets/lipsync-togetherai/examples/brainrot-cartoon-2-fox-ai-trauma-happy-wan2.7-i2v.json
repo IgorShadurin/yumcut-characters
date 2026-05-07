@@ -1,0 +1,28 @@
+{
+  "model": "Wan-AI/wan2.7-i2v",
+  "includeCostRequested": true,
+  "together": {
+    "taskId": "019e02c9-0262-791e-ba5d-086eaed08708",
+    "status": "completed",
+    "outputUrl": "https://api.together.ai/shrt/wt6lkGcVoVglcf7h",
+    "costUsd": null
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-togetherai/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled.",
+    "prompt": "Create a natural talking performance from the provided character image and audio.\n\nCore direction:\n- Keep the character alive and interactive with the environment through subtle believable micro-actions.\n- Add gentle secondary motion (small head turns, eye focus shifts, breathing rhythm, slight posture shifts, and soft shoulder movement when visible).\n- Keep emotional delivery readable but controlled; avoid exaggerated acting, chaotic motion, and over-emotional faces.\n- Prioritize accurate lip synchronization and stable character identity throughout the whole clip.\n- Preserve clean cinematic consistency in scene lighting and background continuity.\n\nAdditional direction:\nEmotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled.",
+    "seconds": "6"
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-wan2.7-i2v.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-wan2.7-i2v.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T14:13:06.623Z",
+    "finishedAt": "2026-05-07T14:15:26.728Z",
+    "durationMs": 140105,
+    "durationSec": 140.105
+  }
+}

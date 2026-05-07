@@ -20,198 +20,47 @@ Example generation (`pixverse:lipsync@1`):
 | Happy | Angry | Neutral |
 |---|---|---|
 | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-happy-pixverse-frame1.jpg" alt="lipsync-runware-happy-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pixverse.mp4) | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-angry-pixverse-frame1.jpg" alt="lipsync-runware-angry-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pixverse.mp4) | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-pixverse-frame1.jpg" alt="lipsync-runware-neutral-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pixverse.mp4) |
-
-<details>
-<summary>Happy Info (pixverse:lipsync@1)</summary>
-
-Price: `$0.0682`  
-Execution time: `45.076s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  tmp/lipsync-runware/brainrot-cartoon-2-fox-ref.mp4 \
-  --audio assets/ai-trauma.wav \
-  --model pixverse:lipsync@1 \
-  --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pixverse.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pixverse.json`
-
-</details>
-
-<details>
-<summary>Angry Info (pixverse:lipsync@1)</summary>
-
-Price: `$0.0682`  
-Execution time: `39.867s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  tmp/lipsync-runware/brainrot-cartoon-2-fox-ref.mp4 \
-  --audio assets/ai-trauma.wav \
-  --model pixverse:lipsync@1 \
-  --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pixverse.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pixverse.json`
-
-</details>
-
-<details>
-<summary>Neutral Info (pixverse:lipsync@1)</summary>
-
-Price: `$0.0682`  
-Execution time: `40.047s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  tmp/lipsync-runware/brainrot-cartoon-2-fox-ref.mp4 \
-  --audio assets/ai-trauma.wav \
-  --model pixverse:lipsync@1 \
-  --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pixverse.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pixverse.json`
-
-</details>
+| <details><summary>Info</summary>Model: <code>pixverse:lipsync@1</code><br>Price: <code>$0.0682</code><br>Execution time: <code>45.076s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- tmp/lipsync-runware/brainrot-cartoon-2-fox-ref.mp4 --audio assets/ai-trauma.wav --model pixverse:lipsync@1 --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pixverse.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pixverse.json</code></details> | <details><summary>Info</summary>Model: <code>pixverse:lipsync@1</code><br>Price: <code>$0.0682</code><br>Execution time: <code>39.867s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- tmp/lipsync-runware/brainrot-cartoon-2-fox-ref.mp4 --audio assets/ai-trauma.wav --model pixverse:lipsync@1 --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pixverse.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pixverse.json</code></details> | <details><summary>Info</summary>Model: <code>pixverse:lipsync@1</code><br>Price: <code>$0.0682</code><br>Execution time: <code>40.047s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- tmp/lipsync-runware/brainrot-cartoon-2-fox-ref.mp4 --audio assets/ai-trauma.wav --model pixverse:lipsync@1 --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pixverse.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pixverse.json</code></details> |
 
 Example generation (`bytedance:seedance@2.0`):
 
 | Happy | Angry | Neutral |
 |---|---|---|
 | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-frame1.jpg" alt="lipsync-runware-happy-seedance2-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2.mp4) | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-frame1.jpg" alt="lipsync-runware-angry-seedance2-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2.mp4) | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-frame1.jpg" alt="lipsync-runware-neutral-seedance2-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2.mp4) |
-
-<details>
-<summary>Happy Info (bytedance:seedance@2.0)</summary>
-
-Price: `$0.79497`  
-Execution time: `233.583s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
-  --audio assets/ai-trauma.wav \
-  --model bytedance:seedance@2.0 \
-  --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2.json`
-
-</details>
-
-<details>
-<summary>Angry Info (bytedance:seedance@2.0)</summary>
-
-Price: `$0.79497`  
-Execution time: `158.897s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
-  --audio assets/ai-trauma.wav \
-  --model bytedance:seedance@2.0 \
-  --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2.json`
-
-</details>
-
-<details>
-<summary>Neutral Info (bytedance:seedance@2.0)</summary>
-
-Price: `$0.79497`  
-Execution time: `174.933s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
-  --audio assets/ai-trauma.wav \
-  --model bytedance:seedance@2.0 \
-  --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2.json`
-
-</details>
+| <details><summary>Info</summary>Model: <code>bytedance:seedance@2.0</code><br>Price: <code>$0.79497</code><br>Execution time: <code>233.583s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model bytedance:seedance@2.0 --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2.json</code></details> | <details><summary>Info</summary>Model: <code>bytedance:seedance@2.0</code><br>Price: <code>$0.79497</code><br>Execution time: <code>158.897s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model bytedance:seedance@2.0 --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2.json</code></details> | <details><summary>Info</summary>Model: <code>bytedance:seedance@2.0</code><br>Price: <code>$0.79497</code><br>Execution time: <code>174.933s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model bytedance:seedance@2.0 --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2.json</code></details> |
 
 Example generation (`bytedance:seedance@2.0-fast`):
 
 | Happy | Angry | Neutral |
 |---|---|---|
 | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast-frame1.jpg" alt="lipsync-runware-happy-seedance2-fast-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.mp4) | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-fast-frame1.jpg" alt="lipsync-runware-angry-seedance2-fast-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-fast.mp4) | [<img src="assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast-frame1.jpg" alt="lipsync-runware-neutral-seedance2-fast-preview-frame" width="220" />](assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast.mp4) |
+| <details><summary>Info</summary>Model: <code>bytedance:seedance@2.0-fast</code><br>Price: <code>$0.6534</code><br>Execution time: <code>143.486s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model bytedance:seedance@2.0-fast --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.json</code></details> | <details><summary>Info</summary>Model: <code>bytedance:seedance@2.0-fast</code><br>Price: <code>$0.6534</code><br>Execution time: <code>127.724s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model bytedance:seedance@2.0-fast --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-fast.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-fast.json</code></details> | <details><summary>Info</summary>Model: <code>bytedance:seedance@2.0-fast</code><br>Price: <code>$0.6534</code><br>Execution time: <code>143.425s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:runware -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model bytedance:seedance@2.0-fast --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast.mp4</code><br><br>Report: <code>assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast.json</code></details> |
 
-<details>
-<summary>Happy Info (bytedance:seedance@2.0-fast)</summary>
+### [lipsync:togetherai]((scripts/lipsync-togetherai/README.md))
 
-Price: `$0.6534`  
-Execution time: `143.486s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
+Together AI image+audio to video generation across supported models.
+Path: `scripts/lipsync-togetherai/index.ts`
 
-```bash
-npm run lipsync:runware -- \
-  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
-  --audio assets/ai-trauma.wav \
-  --model bytedance:seedance@2.0-fast \
-  --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.mp4
-```
+Example generation (`Wan-AI/wan2.7-i2v`):
 
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.json`
+| Happy | Angry | Neutral |
+|---|---|---|
+| [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-happy-wan2.7-i2v-frame1.jpg" alt="together-wan-happy-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-wan2.7-i2v.mp4) | [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-angry-wan2.7-i2v-frame1.jpg" alt="together-wan-angry-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-wan2.7-i2v.mp4) | [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-wan2.7-i2v-frame1.jpg" alt="together-wan-neutral-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-wan2.7-i2v.mp4) |
+| <details><summary>Info</summary>Model: <code>Wan-AI/wan2.7-i2v</code><br>Price: <code>null</code><br>Execution time: <code>140.105s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model Wan-AI/wan2.7-i2v --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-wan2.7-i2v.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-wan2.7-i2v.json</code></details> | <details><summary>Info</summary>Model: <code>Wan-AI/wan2.7-i2v</code><br>Price: <code>null</code><br>Execution time: <code>188.527s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model Wan-AI/wan2.7-i2v --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-wan2.7-i2v.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-wan2.7-i2v.json</code></details> | <details><summary>Info</summary>Model: <code>Wan-AI/wan2.7-i2v</code><br>Price: <code>null</code><br>Execution time: <code>172.676s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model Wan-AI/wan2.7-i2v --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-wan2.7-i2v.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-wan2.7-i2v.json</code></details> |
 
-</details>
+Example generation (`google/veo-3.0-audio`):
 
-<details>
-<summary>Angry Info (bytedance:seedance@2.0-fast)</summary>
+| Happy | Angry | Neutral |
+|---|---|---|
+| [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-audio-frame1.jpg" alt="together-veo3-happy-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-audio.mp4) | [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-audio-frame1.jpg" alt="together-veo3-angry-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-audio.mp4) | [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-audio-frame1.jpg" alt="together-veo3-neutral-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-audio.mp4) |
+| <details><summary>Info</summary>Model: <code>google/veo-3.0-audio</code><br>Price: <code>$2.4</code><br>Execution time: <code>85.752s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model google/veo-3.0-audio --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-audio.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-audio.json</code></details> | <details><summary>Info</summary>Model: <code>google/veo-3.0-audio</code><br>Price: <code>$2.4</code><br>Execution time: <code>88.212s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model google/veo-3.0-audio --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-audio.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-audio.json</code></details> | <details><summary>Info</summary>Model: <code>google/veo-3.0-audio</code><br>Price: <code>$2.4</code><br>Execution time: <code>145.9s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model google/veo-3.0-audio --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-audio.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-audio.json</code></details> |
 
-Price: `$0.6534`  
-Execution time: `127.724s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
+Example generation (`google/veo-3.0-fast-audio`):
 
-```bash
-npm run lipsync:runware -- \
-  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
-  --audio assets/ai-trauma.wav \
-  --model bytedance:seedance@2.0-fast \
-  --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-fast.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-seedance2-fast.json`
-
-</details>
-
-<details>
-<summary>Neutral Info (bytedance:seedance@2.0-fast)</summary>
-
-Price: `$0.6534`  
-Execution time: `143.425s`  
-Audio: [ai-trauma.wav](assets/ai-trauma.wav)
-
-```bash
-npm run lipsync:runware -- \
-  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
-  --audio assets/ai-trauma.wav \
-  --model bytedance:seedance@2.0-fast \
-  --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." \
-  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast.mp4
-```
-
-Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast.json`
-
-</details>
+| Happy | Angry | Neutral |
+|---|---|---|
+| [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-fast-audio-frame1.jpg" alt="together-veo3-fast-happy-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-fast-audio.mp4) | [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-fast-audio-frame1.jpg" alt="together-veo3-fast-angry-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-fast-audio.mp4) | [<img src="assets/lipsync-togetherai/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-fast-audio-frame1.jpg" alt="together-veo3-fast-neutral-preview" width="220" />](assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-fast-audio.mp4) |
+| <details><summary>Info</summary>Model: <code>google/veo-3.0-fast-audio</code><br>Price: <code>$0.9</code><br>Execution time: <code>133.737s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model google/veo-3.0-fast-audio --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-fast-audio.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-happy-veo3-fast-audio.json</code></details> | <details><summary>Info</summary>Model: <code>google/veo-3.0-fast-audio</code><br>Price: <code>$0.9</code><br>Execution time: <code>133.497s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model google/veo-3.0-fast-audio --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-fast-audio.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-fast-audio.json</code></details> | <details><summary>Info</summary>Model: <code>google/veo-3.0-fast-audio</code><br>Price: <code>$0.9</code><br>Execution time: <code>105.894s</code><br>Audio: <a href="assets/ai-trauma.wav">ai-trauma.wav</a><br><br>Command:<br><code>npm run lipsync:togetherai -- --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png --audio assets/ai-trauma.wav --model google/veo-3.0-fast-audio --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." --output assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-fast-audio.mp4</code><br><br>Report: <code>assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-fast-audio.json</code></details> |
 
 ### [lipsync:vmodel]((scripts/lipsync-vmodel/README.md))
 

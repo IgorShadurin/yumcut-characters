@@ -1,0 +1,28 @@
+{
+  "model": "google/veo-3.0-audio",
+  "includeCostRequested": true,
+  "together": {
+    "taskId": "019e02cc-1fe7-791e-b49c-c5740563a8c7",
+    "status": "completed",
+    "outputUrl": "https://api.together.ai/shrt/C37VsI4GynGtSiEK",
+    "costUsd": 2.4
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-togetherai/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded.",
+    "prompt": "Create a natural talking performance from the provided character image and audio.\n\nCore direction:\n- Keep the character alive and interactive with the environment through subtle believable micro-actions.\n- Add gentle secondary motion (small head turns, eye focus shifts, breathing rhythm, slight posture shifts, and soft shoulder movement when visible).\n- Keep emotional delivery readable but controlled; avoid exaggerated acting, chaotic motion, and over-emotional faces.\n- Prioritize accurate lip synchronization and stable character identity throughout the whole clip.\n- Preserve clean cinematic consistency in scene lighting and background continuity.\n\nAdditional direction:\nEmotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded.",
+    "seconds": "6"
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-audio.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-veo3-audio.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T14:16:31.073Z",
+    "finishedAt": "2026-05-07T14:18:56.973Z",
+    "durationMs": 145900,
+    "durationSec": 145.9
+  }
+}

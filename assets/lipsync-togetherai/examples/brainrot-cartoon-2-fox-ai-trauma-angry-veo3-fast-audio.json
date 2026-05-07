@@ -1,0 +1,28 @@
+{
+  "model": "google/veo-3.0-fast-audio",
+  "includeCostRequested": true,
+  "together": {
+    "taskId": "019e02ce-983a-791e-979f-d0919a3661bc",
+    "status": "completed",
+    "outputUrl": "https://api.together.ai/shrt/8GTUCUoZphnqDvzO",
+    "costUsd": 0.9
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-togetherai/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration.",
+    "prompt": "Create a natural talking performance from the provided character image and audio.\n\nCore direction:\n- Keep the character alive and interactive with the environment through subtle believable micro-actions.\n- Add gentle secondary motion (small head turns, eye focus shifts, breathing rhythm, slight posture shifts, and soft shoulder movement when visible).\n- Keep emotional delivery readable but controlled; avoid exaggerated acting, chaotic motion, and over-emotional faces.\n- Prioritize accurate lip synchronization and stable character identity throughout the whole clip.\n- Preserve clean cinematic consistency in scene lighting and background continuity.\n\nAdditional direction:\nEmotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration.",
+    "seconds": "6"
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-fast-audio.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-togetherai/examples/brainrot-cartoon-2-fox-ai-trauma-angry-veo3-fast-audio.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T14:19:13.382Z",
+    "finishedAt": "2026-05-07T14:21:26.879Z",
+    "durationMs": 133497,
+    "durationSec": 133.497
+  }
+}
