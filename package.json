@@ -7,6 +7,7 @@
     "lipsync:runware": "tsx scripts/lipsync-runware/index.ts",
     "lipsync:vmodel": "tsx scripts/lipsync-vmodel/index.ts",
     "character:new": "tsx scripts/character-new/index.ts",
+    "lipsync:replicate": "tsx scripts/lipsync-replicate/index.ts",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "echo \"No tests configured\"",

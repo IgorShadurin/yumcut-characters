@@ -127,6 +127,19 @@ function buildInferenceTask(
     };
   }
 
+  if (options.model === 'prunaai:p-video@0') {
+    return {
+      ...base,
+      inputs: {
+        frameImages: [referenceImage],
+        audio: inputAudio,
+        settings: {
+          audio: true,
+        },
+      },
+    };
+  }
+
   return {
     ...base,
     // PixVerse LipSync accepts referenceVideos + inputAudios.

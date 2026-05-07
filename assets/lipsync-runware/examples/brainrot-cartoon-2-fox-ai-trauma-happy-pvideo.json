@@ -1,0 +1,27 @@
+{
+  "model": "prunaai:p-video@0",
+  "includeCostRequested": true,
+  "runware": {
+    "taskUUID": "831a5a0b-fa85-4624-98ca-7e6348087667",
+    "videoURL": "https://vm.runware.ai/video/os/a03d21/ws/5/vi/1e0776be-8497-449d-8cb4-e380c427c14a.mp4",
+    "costUSD": 0.1163
+  },
+  "input": {
+    "videoPath": null,
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-runware/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled.",
+    "prompt": "Create a natural talking performance from the provided face reference and audio.\n\nCore direction:\n- Keep the character alive and interactive with the environment using subtle, believable micro-actions.\n- Add gentle secondary motion (small head turns, eye focus shifts, breathing rhythm, slight posture adjustments, soft hand/shoulder movement when visible).\n- Keep emotional delivery readable but controlled; avoid overacting, exaggerated expressions, or chaotic movement.\n- Prioritize clean lip-sync accuracy and stable identity across all frames.\n- Preserve cinematic consistency in lighting and scene continuity.\n\nAdditional direction:\nEmotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled."
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pvideo.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pvideo.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T16:59:36.641Z",
+    "finishedAt": "2026-05-07T17:00:28.889Z",
+    "durationMs": 52248,
+    "durationSec": 52.248
+  }
+}

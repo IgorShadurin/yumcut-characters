@@ -1,0 +1,33 @@
+{
+  "model": "bytedance/omni-human-1.5",
+  "includeCostRequested": true,
+  "replicate": {
+    "predictionId": "f8fgp0yd5xrmy0cy0cns8djxew",
+    "status": "succeeded",
+    "outputUrl": "https://replicate.delivery/xezq/BV2uedrYBgXKXCcxos5hLzQXmFreea9XP9McT0MGf5S4f0U0C/tmpen897_t9.mp4",
+    "predictTimeSec": 193.01070923,
+    "totalTimeSec": 193.307385138
+  },
+  "pricing": {
+    "usdPerSecond": 0.16,
+    "estimatedCostUsd": 0.93036,
+    "estimatedFromAudioDurationSec": 5.81475
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-replicate/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled.",
+    "prompt": "Create a natural talking performance that follows the provided audio exactly.\nKeep lip sync accurate and stable.\nPreserve identity and face structure from the reference image.\nUse subtle head movement and natural blinking; avoid exaggerated motion.\nKeep framing clean and character-focused.\n\nAdditional direction:\nEmotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled."
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-happy-bytedance-omni-human-1-5.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-happy-bytedance-omni-human-1-5.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T16:01:00.167Z",
+    "finishedAt": "2026-05-07T16:04:19.409Z",
+    "durationMs": 199242,
+    "durationSec": 199.242
+  }
+}

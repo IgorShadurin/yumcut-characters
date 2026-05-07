@@ -1,0 +1,33 @@
+{
+  "model": "prunaai/p-video-avatar",
+  "includeCostRequested": true,
+  "replicate": {
+    "predictionId": "yyvqsdrbcsrmy0cy0cy956ba2r",
+    "status": "succeeded",
+    "outputUrl": "https://replicate.delivery/xezq/eipf1VBGGKnqYkgTWwj9b7MLoPiI9GFWo7U3S9LiF1N11miWA/output.mp4",
+    "predictTimeSec": 14.747484356,
+    "totalTimeSec": 14.915813757
+  },
+  "pricing": {
+    "usdPerSecond": 0.025,
+    "estimatedCostUsd": 0.145369,
+    "estimatedFromAudioDurationSec": 5.81475
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-replicate/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled.",
+    "prompt": "Create a natural talking performance that follows the provided audio exactly.\nKeep lip sync accurate and stable.\nPreserve identity and face structure from the reference image.\nUse subtle head movement and natural blinking; avoid exaggerated motion.\nKeep framing clean and character-focused.\n\nAdditional direction:\nEmotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled."
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-happy-prunaai-p-video-avatar.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-happy-prunaai-p-video-avatar.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T16:18:45.519Z",
+    "finishedAt": "2026-05-07T16:19:04.380Z",
+    "durationMs": 18861,
+    "durationSec": 18.861
+  }
+}

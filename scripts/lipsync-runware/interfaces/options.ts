@@ -3,7 +3,7 @@ export interface CliOptions {
   imagePath?: string;
   audioPath: string;
   outputPath?: string;
-  model: 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast';
+  model: 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast' | 'prunaai:p-video@0';
   promptFilePath: string;
   additionalPrompt?: string;
   prompt: string;

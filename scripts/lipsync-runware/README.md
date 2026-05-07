@@ -7,6 +7,7 @@ Supported hardcoded models:
 - `klingai:7@1`
 - `bytedance:seedance@2.0`
 - `bytedance:seedance@2.0-fast`
+- `prunaai:p-video@0`
 
 ## Example
 
@@ -44,10 +45,12 @@ npm run lipsync:runware -- \
   - `klingai:7@1`
   - `bytedance:seedance@2.0`
   - `bytedance:seedance@2.0-fast`
+  - `prunaai:p-video@0`
 - Model request mapping:
   - `pixverse:lipsync@1` -> `referenceVideos` + `inputAudios`
   - `klingai:7@1` -> `inputs.video` + `inputs.audio`
   - `bytedance:seedance@2.0` / `bytedance:seedance@2.0-fast` -> `inputs.referenceImages` + `inputs.referenceAudios` + `settings.audio=true`
+  - `prunaai:p-video@0` -> `inputs.frameImages` + `inputs.audio` + `settings.audio=true`
 - `klingai:7@1` does not extend output duration to full audio length; it keeps the input video timing window.
 - `klingai:7@1` output quality/motion is usually less smooth than `pixverse:lipsync@1` (still usable for many cases).
 
@@ -258,6 +261,73 @@ npm run lipsync:runware -- \
 Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-seedance2-fast.json`
 
 </details>
+
+## Example Generation (P-Video)
+
+| Happy | Angry | Neutral |
+|---|---|---|
+| [<img src="../../assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-happy-pvideo-frame1.jpg" alt="lipsync-runware-happy-pvideo-preview-frame" width="220" />](../../assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pvideo.mp4) | [<img src="../../assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-angry-pvideo-frame1.jpg" alt="lipsync-runware-angry-pvideo-preview-frame" width="220" />](../../assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pvideo.mp4) | [<img src="../../assets/lipsync-runware/previews/brainrot-cartoon-2-fox-ai-trauma-neutral-pvideo-frame1.jpg" alt="lipsync-runware-neutral-pvideo-preview-frame" width="220" />](../../assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pvideo.mp4) |
+
+<details>
+<summary>Happy Info (prunaai:p-video@0)</summary>
+
+Price: `$0.1163`  
+Execution time: `52.248s`  
+Audio: [ai-trauma.wav](../../assets/ai-trauma.wav)
+
+```bash
+npm run lipsync:runware -- \
+  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
+  --audio assets/ai-trauma.wav \
+  --model prunaai:p-video@0 \
+  --prompt "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled." \
+  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pvideo.mp4
+```
+
+Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-pvideo.json`
+
+</details>
+
+<details>
+<summary>Angry Info (prunaai:p-video@0)</summary>
+
+Price: `$0.1163`  
+Execution time: `35.401s`  
+Audio: [ai-trauma.wav](../../assets/ai-trauma.wav)
+
+```bash
+npm run lipsync:runware -- \
+  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
+  --audio assets/ai-trauma.wav \
+  --model prunaai:p-video@0 \
+  --prompt "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration." \
+  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pvideo.mp4
+```
+
+Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-angry-pvideo.json`
+
+</details>
+
+<details>
+<summary>Neutral Info (prunaai:p-video@0)</summary>
+
+Price: `$0.1163`  
+Execution time: `40.662s`  
+Audio: [ai-trauma.wav](../../assets/ai-trauma.wav)
+
+```bash
+npm run lipsync:runware -- \
+  --image assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png \
+  --audio assets/ai-trauma.wav \
+  --model prunaai:p-video@0 \
+  --prompt "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded." \
+  --output assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pvideo.mp4
+```
+
+Report: `assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-pvideo.json`
+
+</details>
+
 ## Pricing Comparison (30s / 60s)
 
 | Model | Model ID | Pricing Basis | 30s | 60s |
@@ -279,7 +349,7 @@ Models below are focused on generating talking video from a reference photo/imag
 
 | Model | AIR ID | Photo + Audio Fit | 30s (est.) | 60s (est.) | Duration Notes |
 |---|---|---|---:|---:|---|
-| [P-Video](https://runware.ai/models/prunaai-p-video) | `prunaai:p-video@0` | Image-to-video with audio input support | $0.60 | $1.20 | Docs: `inputs.image` + `inputs.audio`; `duration` max is 10s per clip. |
+| [P-Video](https://runware.ai/models/prunaai-p-video) | `prunaai:p-video@0` | Image-to-video with audio input support | $0.60 | $1.20 | Docs: `inputs.frameImages` + `inputs.audio`; when audio is provided, clip follows audio-driven flow. |
 | [Seedance 1.5 Pro](https://runware.ai/models/bytedance-seedance-1-5-pro) | `bytedance:seedance@1.5-pro` | Native synchronized audio video from image/text | $0.72 | $1.44 | Pricing shown at `480p · 5s · audio = $0.12`; short-form clip workflow. |
 | [Aurora v1 Fast](https://runware.ai/models/creatify-aurora-v1-fast) | `creatify:aurora@fast` | Talking-head from single image + audio | $2.10 | $4.20 | Price shown as `480p · 1s = $0.07`; explicit max duration not shown in fetched docs snippets. |
 | [OmniHuman-1](https://runware.ai/models/bytedance-omnihuman-1) | `bytedance:5@1` | Talking human video from single image + audio | $2.904 | $5.808 | Provider docs: audio input max 30s (15s recommended). |

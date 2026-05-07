@@ -1,0 +1,33 @@
+{
+  "model": "prunaai/p-video-avatar",
+  "includeCostRequested": true,
+  "replicate": {
+    "predictionId": "azcxtbanwdrmy0cy0cy9knhk8m",
+    "status": "succeeded",
+    "outputUrl": "https://replicate.delivery/xezq/aPpnPhjFH1IqBhPeen5fbK2DCqvWSp2uEJog6aouycXJsNFtA/output.mp4",
+    "predictTimeSec": 9.720833929,
+    "totalTimeSec": 9.923000859
+  },
+  "pricing": {
+    "usdPerSecond": 0.025,
+    "estimatedCostUsd": 0.145369,
+    "estimatedFromAudioDurationSec": 5.81475
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-replicate/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration.",
+    "prompt": "Create a natural talking performance that follows the provided audio exactly.\nKeep lip sync accurate and stable.\nPreserve identity and face structure from the reference image.\nUse subtle head movement and natural blinking; avoid exaggerated motion.\nKeep framing clean and character-focused.\n\nAdditional direction:\nEmotion: angry. Firm serious expression, restrained tension in brows and jaw, assertive delivery, minimal aggressive movement; avoid exaggeration."
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-angry-prunaai-p-video-avatar.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-angry-prunaai-p-video-avatar.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T16:19:04.881Z",
+    "finishedAt": "2026-05-07T16:19:17.980Z",
+    "durationMs": 13099,
+    "durationSec": 13.099
+  }
+}

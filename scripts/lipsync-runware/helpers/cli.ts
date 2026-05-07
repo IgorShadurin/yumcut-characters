@@ -7,20 +7,28 @@ const SUPPORTED_MODELS = new Set([
   'klingai:7@1',
   'bytedance:seedance@2.0',
   'bytedance:seedance@2.0-fast',
+  'prunaai:p-video@0',
 ] as const);
 
 function isSeedanceModel(model: string): model is 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast' {
   return model === 'bytedance:seedance@2.0' || model === 'bytedance:seedance@2.0-fast';
 }
 
+function isPVideoModel(model: string): model is 'prunaai:p-video@0' {
+  return model === 'prunaai:p-video@0';
+}
+
 function usage(): never {
   console.error('Usage: npm run lipsync:runware -- <videoPath> --audio <audioPath> --model <model> [--output <outputPath>]');
   console.error('Example: npm run lipsync:runware -- ./video.mp4 --audio ./voice.wav --model pixverse:lipsync@1 --output ./tmp/lipsync-runware/out.mp4');
   console.error('Seedance example: npm run lipsync:runware -- --image ./image.png --audio ./voice.wav --model bytedance:seedance@2.0 --output ./tmp/lipsync-runware/out.mp4');
+  console.error('P-Video example: npm run lipsync:runware -- --image ./image.png --audio ./voice.wav --model prunaai:p-video@0 --output ./tmp/lipsync-runware/out.mp4');
   console.error(
     'Flags: --prompt, --prompt-file, --include-cost=<true|false> (default true), --no-cost, --include-report=<true|false> (default true), --no-report'
   );
-  console.error('Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast');
+  console.error(
+    'Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast, prunaai:p-video@0'
+  );
   process.exit(1);
 }
 
@@ -81,18 +89,18 @@ export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
   const timeoutMs = Number((named.get('--timeout-ms') || '600000').trim());
 
   if (!audioPath || !model) usage();
-  if (!SUPPORTED_MODELS.has(model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast')) {
+  if (!SUPPORTED_MODELS.has(model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast' | 'prunaai:p-video@0')) {
     throw new Error(
-      `Unsupported model: ${model}. Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast`
+      `Unsupported model: ${model}. Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast, prunaai:p-video@0`
     );
   }
 
-  if (isSeedanceModel(model)) {
+  if (isSeedanceModel(model) || isPVideoModel(model)) {
     if (!imagePath) {
-      throw new Error('--image is required for Seedance models.');
+      throw new Error('--image is required for this model.');
     }
   } else if (!videoPath) {
-    throw new Error('<videoPath> (or --video) is required for non-Seedance models.');
+    throw new Error('<videoPath> (or --video) is required for this model.');
   }
   if (!Number.isFinite(pollIntervalMs) || pollIntervalMs < 1000) {
     throw new Error('--poll-interval-ms must be a number >= 1000');
@@ -106,7 +114,7 @@ export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
     imagePath: imagePath ? path.resolve(imagePath) : undefined,
     audioPath: path.resolve(audioPath),
     outputPath: outputPath ? path.resolve(outputPath) : undefined,
-    model: model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast',
+    model: model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast' | 'prunaai:p-video@0',
     promptFilePath: path.resolve(promptFilePath),
     additionalPrompt: additionalPrompt || undefined,
     prompt: '',

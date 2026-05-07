@@ -1,0 +1,33 @@
+{
+  "model": "kwaivgi/kling-avatar-v2",
+  "includeCostRequested": true,
+  "replicate": {
+    "predictionId": "wg5fy74zj5rmr0cy0cwrcst8hm",
+    "status": "succeeded",
+    "outputUrl": "https://replicate.delivery/xezq/MNZe9ZV9NXyXKqUQDoHLI6QdpSm5yfPjfeH8yHp3BBD7VbKaB/tmpyv3a9prg.mp4",
+    "predictTimeSec": 150.311163208,
+    "totalTimeSec": 150.449606306
+  },
+  "pricing": {
+    "usdPerSecond": 0.056,
+    "estimatedCostUsd": 0.325626,
+    "estimatedFromAudioDurationSec": 5.81475
+  },
+  "input": {
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-replicate/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded.",
+    "prompt": "Create a natural talking performance that follows the provided audio exactly.\nKeep lip sync accurate and stable.\nPreserve identity and face structure from the reference image.\nUse subtle head movement and natural blinking; avoid exaggerated motion.\nKeep framing clean and character-focused.\n\nAdditional direction:\nEmotion: neutral. Calm balanced expression, steady eye line, minimal facial change, natural conversational cadence; keep performance grounded."
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-kwaivgi-kling-avatar-v2.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-replicate/examples/brainrot-cartoon-2-fox-ai-trauma-neutral-kwaivgi-kling-avatar-v2.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T16:16:06.812Z",
+    "finishedAt": "2026-05-07T16:18:44.953Z",
+    "durationMs": 158141,
+    "durationSec": 158.141
+  }
+}
