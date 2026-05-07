@@ -71,7 +71,7 @@ Path: `scripts/character-new/index.ts`
 
 #### Redraw Clones
 
-| Tralalero_Tralala.webp | images.jpeg | Chimpanzini_Bananino.png |
+| Source A | Source B | Source C |
 |---|---|---|
-| <img src="assets/character-new-redraw/clone-tralalero-tralala.png" alt="clone-tralalero-tralala" height="380" /> | <img src="assets/character-new-redraw/clone-images-jpeg.png" alt="clone-images-jpeg" height="380" /> | <img src="assets/character-new-redraw/clone-chimpanzini-bananino.png" alt="clone-chimpanzini-bananino" height="380" /> |
+| <img src="assets/character-new-redraw/clone-tralalero-tralala.png" alt="clone-source-a" height="380" /> | <img src="assets/character-new-redraw/clone-images-jpeg.png" alt="clone-source-b" height="380" /> | <img src="assets/character-new-redraw/clone-chimpanzini-bananino.png" alt="clone-source-c" height="380" /> |
 | <details><summary>Prompt</summary><code>same character style and identity, full-body centered, cinematic boardwalk at blue hour with neon kiosks, reflections on wet floor, and distant carnival lights</code></details> | <details><summary>Prompt</summary><code>same character style and identity, full-body centered, premium studio stage with rim lights, reflective floor, and soft volumetric haze</code></details> | <details><summary>Prompt</summary><code>same character style and identity, full-body centered, vibrant urban plaza with street murals, decorative lamps, and evening bokeh</code></details> |

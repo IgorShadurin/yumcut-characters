@@ -17,6 +17,18 @@ npm run character:new -- \
   --prompt "same character style, new rooftop city background at sunset"
 ```
 
+## Clone Example
+
+Clone a character from a reference image while keeping the same style, then adjust by prompt:
+
+```bash
+npm run character:new -- \
+  --mode redraw \
+  --source-image /path/to/source-character.png \
+  --prompt "same character identity, full-body centered, cinematic street background with neon reflections" \
+  --output /path/to/clone-output.png
+```
+
 ## Prompt Files
 
 - `scripts/character-new/prompts/character-9x16.md` - Base 9:16 full-body character template.
