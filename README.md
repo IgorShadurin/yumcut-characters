@@ -7,3 +7,15 @@ Main open-source app repo: prompt-to-video pipeline for Shorts/Reels/TikTok with
 
 [YumCut](https://yumcut.com/?utm_source=yumcut_characters_readme)
 Official YumCut website and product landing page for creating viral short-form clips fast.
+
+## Tools
+
+### `lipsync:runware`
+Runware lip-sync generation from reference video and audio.
+[Tool README](scripts/lipsync-runware/README.md)
+Path: `scripts/lipsync-runware/index.ts`
+
+### `lipsync:vmodel`
+VModel talking-photo lip-sync generation from image and audio.
+[Tool README](scripts/lipsync-vmodel/README.md)
+Path: `scripts/lipsync-vmodel/index.ts`
