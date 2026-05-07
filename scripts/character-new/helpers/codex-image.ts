@@ -1,15 +1,37 @@
-import type { CodexAuth, GeneratedImageResult } from '../interfaces/options';
+import type { CharacterMode, CodexAuth, GeneratedImageResult } from '../interfaces/options';
 
 const CANVAS_SIZE = '1008x1792';
 
-function buildInstructions(): string {
-  return [
+type GenerationRequest = {
+  mode: CharacterMode;
+  quality: 'low' | 'medium' | 'high';
+  prompt: string;
+  sourceImageDataUrl?: string;
+  guideImageDataUrl?: string;
+};
+
+function buildInstructions(mode: CharacterMode): string {
+  const common = [
     'Generate exactly one image.',
     'Do not return assistant text.',
     'Use the image_generation tool.',
-    'If a guide image is provided, use it only for composition/framing reference.',
-    'Never render, copy, or display the guide image, guide lines, boxes, labels, or any overlay elements in the final output.',
-  ].join('\n');
+    'Always output a vertical 9:16 composition.',
+    'No text, no watermark, no logo, no frame.',
+    'Never render, copy, or display guide lines, boxes, labels, or overlay elements in the final output.',
+  ];
+
+  const generateMode = [
+    'If a guide image is provided, treat it as a strict composition constraint.',
+    'The full character silhouette must fit completely inside the designated guide box; if uncertain, scale character down more.',
+  ];
+
+  const redrawMode = [
+    'The source image is the style anchor: keep visual language, materials, rendering feel, and character identity.',
+    'Apply the user prompt as a redraw direction while preserving the source style.',
+    'When changing composition, keep the subject fully visible and centered.',
+  ];
+
+  return [...common, ...(mode === 'redraw' ? redrawMode : generateMode)].join('\n');
 }
 
 type StreamPayload = {
@@ -91,19 +113,24 @@ async function readStream(response: Response): Promise<GeneratedImageResult & { 
 export async function generateCharacterImage(
   auth: CodexAuth,
   model: string,
-  prompt: string,
-  guideImageDataUrl?: string
+  request: GenerationRequest
 ): Promise<GeneratedImageResult & { costUsd: number | null }> {
   const content: Array<{ type: 'input_image'; image_url: string } | { type: 'input_text'; text: string }> = [];
-  if (guideImageDataUrl) {
+  if (request.sourceImageDataUrl) {
     content.push({
       type: 'input_image',
-      image_url: guideImageDataUrl,
+      image_url: request.sourceImageDataUrl,
+    });
+  }
+  if (request.guideImageDataUrl) {
+    content.push({
+      type: 'input_image',
+      image_url: request.guideImageDataUrl,
     });
   }
   content.push({
     type: 'input_text',
-    text: prompt.trim(),
+    text: request.prompt.trim(),
   });
 
   const response = await fetch(`${auth.chatgptBaseUrl}/codex/responses`, {
@@ -115,7 +142,7 @@ export async function generateCharacterImage(
     },
     body: JSON.stringify({
       model,
-      instructions: buildInstructions(),
+      instructions: buildInstructions(request.mode),
       input: [
         {
           role: 'user',
@@ -133,7 +160,7 @@ export async function generateCharacterImage(
           action: 'generate',
           background: 'auto',
           output_format: 'png',
-          quality: 'medium',
+          quality: request.quality,
           size: CANVAS_SIZE,
         },
       ],

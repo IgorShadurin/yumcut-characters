@@ -1,11 +1,16 @@
+export type CharacterMode = 'generate' | 'redraw';
+
 export interface CliOptions {
+  mode: CharacterMode;
   prompt: string;
   outputPath?: string;
   authPath: string;
   promptFilePath: string;
   styleFilePath: string;
+  sourceImagePath?: string;
   guideImagePath?: string;
   model: string;
+  quality: 'low' | 'medium' | 'high';
   includeCost: boolean;
   includeReport: boolean;
 }

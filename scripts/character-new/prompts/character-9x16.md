@@ -10,21 +10,16 @@ Hard requirements:
 - One character only, centered, fully visible head-to-toe.
 - Keep clean silhouette and readable pose.
 - Use a background different from tropical beach.
+- Background must be a real scene with depth and context, not a plain gradient or empty seamless backdrop.
+- Include at least 3 visible environment elements (for example: furniture, architecture, props, lighting fixtures, plants, street objects, stage elements).
 - Bright, production-ready lighting and polished material shading.
 - No text, no watermark, no logo, no frame.
 - Output as a single high-quality PNG.
 
-Universal safe-zone framing requirements for short-form platforms (Instagram Reels, TikTok, YouTube Shorts):
-- Compose on a 9:16 canvas (treat as 1080x1920 reference coordinates).
-- Keep the entire character silhouette inside the global safe silhouette box: x=90..990, y=200..1580.
-- Keep the face, hands, and key fusion details inside the core visibility box: x=140..940, y=260..1500.
-- Keep the primary focal area (eyes/face/emotion center) inside the high-priority box: x=220..860, y=320..1120.
-- Keep top and bottom UI-risk bands clear of critical details: top band y=0..220, bottom band y=1540..1920.
-- Keep right-side UI-risk band clear of critical details: x=930..1080.
-- Keep the four corners non-critical (background-only), because platform UI/crops vary by device and placement.
-- Do not place essential anatomy, expressions, or small details on screen edges; maintain clear inner padding.
-- Enforce minimum clear margins for the full silhouette: top >= 18% canvas height, bottom >= 18%, left >= 16% canvas width, right >= 16%.
-- Keep character scale compact: full silhouette width should be about 40% to 52% of canvas width, and full silhouette height about 58% to 72% of canvas height.
-- Avoid wide lateral extensions; keep tails, wings, props, feathers, and accessories folded/compact and contained inside the silhouette box.
-- If framing conflict appears, scale the character down and recenter instead of letting any part exit the safe silhouette box.
-- If a guide template image is provided, use it only as an invisible composition reference and never render the template/lines/labels in the final output.
+Safe-zone framing requirements:
+- Compose on a 9:16 canvas.
+- If a guide template image is provided, the guide box is a hard constraint: place the entire character silhouette fully inside the box.
+- Keep the character compact and centered: target about 50% to 62% of canvas height and about 38% to 50% of canvas width.
+- Keep all appendages and accessories inside that same box (no parts crossing outside), including tails, ears, wings, hair, and props.
+- Leave clearly visible empty space above the head and below the feet inside the box.
+- Never render the guide image, guide box, lines, labels, or overlays in the final output.

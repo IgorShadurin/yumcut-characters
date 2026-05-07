@@ -8,9 +8,19 @@ Generate one 9:16 animated character image with Codex image generation using loc
 npm run character:new -- --prompt "friendly astronaut fox in mechanic overalls"
 ```
 
+Redraw mode (same style from reference image, HQ by default):
+
+```bash
+npm run character:new -- \
+  --mode redraw \
+  --source-image /path/to/reference-image.webp \
+  --prompt "same character style, new rooftop city background at sunset"
+```
+
 ## Prompt Files
 
 - `scripts/character-new/prompts/character-9x16.md` - Base 9:16 full-body character template.
+- `scripts/character-new/prompts/redraw-9x16.md` - Redraw template for image-to-image mode.
 - `scripts/character-new/prompts/safezone-template-9x16.png` - Composition guide image for safe-zone framing (reference only).
 - `scripts/character-new/prompts/styles/tropitoon.md` - Glossy high-saturation mascot cartoon style.
 - `scripts/character-new/prompts/styles/brainrot-kid.md` - Bright playful hybrid-mascot brainrot style.
@@ -65,13 +75,16 @@ npm run character:new -- \
 
 ```bash
 npm run character:new -- \
+  --mode generate \
   --prompt "friendly astronaut fox in mechanic overalls" \
   --output /path/to/output.png \
-  --auth-path /Users/your-user/.codex/auth.json \
+  --auth-path /path/to/auth.json \
   --prompt-file /path/to/character-9x16.md \
+  --source-image /path/to/reference-image.png \
   --guide-image /path/to/safezone-template-9x16.png \
   --style-file /path/to/style.md \
   --model gpt-5.4 \
+  --quality high \
   --include-cost=true \
   --include-report=true
 ```
@@ -103,8 +116,10 @@ npm run character:new -- --prompt "camping lantern and red panda, full-body char
 ## Notes
 
 - Default auth path: `~/.codex/auth.json`.
+- Modes: `generate` (default) and `redraw` (requires `--source-image`).
 - Default style preset: `tropitoon`.
-- Default prompt template path: `scripts/character-new/prompts/character-9x16.md`.
+- Default prompt template path: `generate` -> `scripts/character-new/prompts/character-9x16.md`, `redraw` -> `scripts/character-new/prompts/redraw-9x16.md`.
+- Quality defaults: `generate` -> `medium`, `redraw` -> `high`.
 - Prompts are stored in `scripts/character-new/prompts/*`.
 - Optional guide image input: `--guide-image`.
 - By default, writes a sidecar JSON report with timing and cost (if available).
