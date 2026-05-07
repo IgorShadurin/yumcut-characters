@@ -1,8 +1,12 @@
 export interface CliOptions {
   videoPath: string;
+  imagePath?: string;
   audioPath: string;
   outputPath?: string;
-  model: 'pixverse:lipsync@1' | 'klingai:7@1';
+  model: 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast';
+  promptFilePath: string;
+  additionalPrompt?: string;
+  prompt: string;
   includeCost: boolean;
   includeReport: boolean;
   pollIntervalMs: number;

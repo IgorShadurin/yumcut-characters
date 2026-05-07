@@ -7,31 +7,46 @@ import {
   defaultOutputPath,
   downloadToFile,
   fileToDataUri,
+  readTextFile,
   sidecarJsonPath,
   writeJsonFile,
 } from './helpers/files';
+import { renderLipsyncPrompt } from './helpers/prompt';
 import { generateLipsyncVideo } from './helpers/runware';
 
 async function main(): Promise<void> {
   const scriptStartedAtMs = Date.now();
   const scriptStartedAtIso = new Date(scriptStartedAtMs).toISOString();
-  const options = parseCliArgs(process.argv.slice(2));
-
-  await assertFileExists(options.videoPath);
-  await assertFileExists(options.audioPath);
-
   const projectRoot = path.resolve(process.cwd());
+  const options = parseCliArgs(process.argv.slice(2), projectRoot);
+
+  if (options.videoPath) {
+    await assertFileExists(options.videoPath);
+  }
+  if (options.imagePath) {
+    await assertFileExists(options.imagePath);
+  }
+  await assertFileExists(options.audioPath);
+  await assertFileExists(options.promptFilePath);
   const outputPath = options.outputPath || defaultOutputPath(projectRoot);
 
-  const [referenceVideoDataUri, audioDataUri] = await Promise.all([
-    fileToDataUri(options.videoPath),
+  const [referenceVideoDataUri, referenceImageDataUri, audioDataUri, promptTemplate] = await Promise.all([
+    options.videoPath ? fileToDataUri(options.videoPath) : Promise.resolve(undefined),
+    options.imagePath ? fileToDataUri(options.imagePath) : Promise.resolve(undefined),
     fileToDataUri(options.audioPath),
+    readTextFile(options.promptFilePath),
   ]);
 
   const apiKey = readRunwareApiKey();
+  const prompt = renderLipsyncPrompt(promptTemplate, options.additionalPrompt);
+  options.prompt = prompt;
 
   console.log(`Submitting Runware lip sync task with model: ${options.model}`);
-  const result = await generateLipsyncVideo(apiKey, options, referenceVideoDataUri, audioDataUri);
+  console.log(`Prompt file: ${options.promptFilePath}`);
+  if (options.additionalPrompt) {
+    console.log(`Additional prompt: ${options.additionalPrompt}`);
+  }
+  const result = await generateLipsyncVideo(apiKey, options, referenceVideoDataUri, referenceImageDataUri, audioDataUri);
 
   console.log(`Task completed: ${result.taskUUID}`);
   console.log(`Downloading result from: ${result.videoURL}`);
@@ -54,8 +69,12 @@ async function main(): Promise<void> {
         costUSD: typeof result.cost === 'number' ? result.cost : null,
       },
       input: {
-        videoPath: options.videoPath,
+        videoPath: options.videoPath || null,
+        imagePath: options.imagePath || null,
         audioPath: options.audioPath,
+        promptFilePath: options.promptFilePath,
+        additionalPrompt: options.additionalPrompt || null,
+        prompt,
       },
       output: {
         videoPath: outputPath,

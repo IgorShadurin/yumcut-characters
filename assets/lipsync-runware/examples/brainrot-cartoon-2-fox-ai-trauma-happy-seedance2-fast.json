@@ -1,0 +1,27 @@
+{
+  "model": "bytedance:seedance@2.0-fast",
+  "includeCostRequested": true,
+  "runware": {
+    "taskUUID": "c0ade0f1-7a6c-4614-a9bd-76497763fa5a",
+    "videoURL": "https://vm.runware.ai/video/os/a05d22/ws/5/vi/238c4568-08c8-43cb-8eb6-dcc7a743eb33.mp4",
+    "costUSD": 0.6534
+  },
+  "input": {
+    "videoPath": null,
+    "imagePath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-original.png",
+    "audioPath": "/Users/test/web/yumcut-characters/assets/ai-trauma.wav",
+    "promptFilePath": "/Users/test/web/yumcut-characters/scripts/lipsync-runware/prompts/performance-default.md",
+    "additionalPrompt": "Emotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled.",
+    "prompt": "Create a natural talking performance from the provided face reference and audio.\n\nCore direction:\n- Keep the character alive and interactive with the environment using subtle, believable micro-actions.\n- Add gentle secondary motion (small head turns, eye focus shifts, breathing rhythm, slight posture adjustments, soft hand/shoulder movement when visible).\n- Keep emotional delivery readable but controlled; avoid overacting, exaggerated expressions, or chaotic movement.\n- Prioritize clean lip-sync accuracy and stable identity across all frames.\n- Preserve cinematic consistency in lighting and scene continuity.\n\nAdditional direction:\nEmotion: happy. Gentle warm smile, light upbeat energy, friendly eye expression, subtle positive head movement; keep it natural and controlled."
+  },
+  "output": {
+    "videoPath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.mp4",
+    "reportPath": "/Users/test/web/yumcut-characters/assets/lipsync-runware/examples/brainrot-cartoon-2-fox-ai-trauma-happy-seedance2-fast.json"
+  },
+  "timing": {
+    "startedAt": "2026-05-07T13:34:18.761Z",
+    "finishedAt": "2026-05-07T13:36:42.247Z",
+    "durationMs": 143486,
+    "durationSec": 143.486
+  }
+}

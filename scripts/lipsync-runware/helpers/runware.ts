@@ -84,7 +84,8 @@ function isStillProcessing(envelope: RunwareEnvelope, taskUUID: string): boolean
 function buildInferenceTask(
   options: CliOptions,
   taskUUID: string,
-  referenceVideo: string,
+  referenceVideo: string | undefined,
+  referenceImage: string | undefined,
   inputAudio: string
 ): Record<string, unknown> {
   const base: Record<string, unknown> = {
@@ -95,6 +96,7 @@ function buildInferenceTask(
     outputType: 'URL',
     outputFormat: 'MP4',
     includeCost: options.includeCost,
+    positivePrompt: options.prompt,
   };
 
   if (options.model === 'klingai:7@1') {
@@ -104,6 +106,23 @@ function buildInferenceTask(
       inputs: {
         video: referenceVideo,
         audio: inputAudio,
+      },
+    };
+  }
+
+  if (options.model === 'bytedance:seedance@2.0' || options.model === 'bytedance:seedance@2.0-fast') {
+    return {
+      ...base,
+      inputs: {
+        prompt: options.prompt,
+        referenceImages: [referenceImage],
+        referenceAudios: [inputAudio],
+        width: 720,
+        height: 1280,
+        duration: 6,
+        settings: {
+          audio: true,
+        },
       },
     };
   }
@@ -119,12 +138,13 @@ function buildInferenceTask(
 export async function generateLipsyncVideo(
   apiKey: string,
   options: CliOptions,
-  referenceVideo: string,
+  referenceVideo: string | undefined,
+  referenceImage: string | undefined,
   inputAudio: string
 ): Promise<LipsyncTaskResult> {
   const taskUUID = randomUUID();
 
-  const submitEnvelope = await postRunware(apiKey, [buildInferenceTask(options, taskUUID, referenceVideo, inputAudio)]);
+  const submitEnvelope = await postRunware(apiKey, [buildInferenceTask(options, taskUUID, referenceVideo, referenceImage, inputAudio)]);
 
   const submitErrors = collectErrors(submitEnvelope);
   if (submitErrors.length > 0) {

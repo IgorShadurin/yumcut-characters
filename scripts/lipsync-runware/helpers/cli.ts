@@ -2,13 +2,25 @@ import path from 'node:path';
 
 import type { CliOptions } from '../interfaces/options';
 
-const SUPPORTED_MODELS = new Set(['pixverse:lipsync@1', 'klingai:7@1'] as const);
+const SUPPORTED_MODELS = new Set([
+  'pixverse:lipsync@1',
+  'klingai:7@1',
+  'bytedance:seedance@2.0',
+  'bytedance:seedance@2.0-fast',
+] as const);
+
+function isSeedanceModel(model: string): model is 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast' {
+  return model === 'bytedance:seedance@2.0' || model === 'bytedance:seedance@2.0-fast';
+}
 
 function usage(): never {
   console.error('Usage: npm run lipsync:runware -- <videoPath> --audio <audioPath> --model <model> [--output <outputPath>]');
   console.error('Example: npm run lipsync:runware -- ./video.mp4 --audio ./voice.wav --model pixverse:lipsync@1 --output ./tmp/lipsync-runware/out.mp4');
-  console.error('Flags: --include-cost=<true|false> (default true), --no-cost, --include-report=<true|false> (default true), --no-report');
-  console.error('Supported models: pixverse:lipsync@1, klingai:7@1');
+  console.error('Seedance example: npm run lipsync:runware -- --image ./image.png --audio ./voice.wav --model bytedance:seedance@2.0 --output ./tmp/lipsync-runware/out.mp4');
+  console.error(
+    'Flags: --prompt, --prompt-file, --include-cost=<true|false> (default true), --no-cost, --include-report=<true|false> (default true), --no-report'
+  );
+  console.error('Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast');
   process.exit(1);
 }
 
@@ -19,7 +31,7 @@ function parseBooleanFlag(rawValue: string, flagName: string): boolean {
   throw new Error(`${flagName} must be true/false (or 1/0).`);
 }
 
-export function parseCliArgs(argv: string[]): CliOptions {
+export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
   const positional: string[] = [];
   const named = new Map<string, string>();
 
@@ -55,17 +67,32 @@ export function parseCliArgs(argv: string[]): CliOptions {
   }
 
   const videoPath = (named.get('--video') || positional[0] || '').trim();
+  const imagePath = (named.get('--image') || '').trim();
   const audioPath = (named.get('--audio') || '').trim();
   const outputPath = (named.get('--output') || '').trim();
   const model = (named.get('--model') || '').trim();
+  const additionalPrompt = (named.get('--prompt') || '').trim();
+  const promptFilePath = (
+    named.get('--prompt-file') || path.join(projectRoot, 'scripts', 'lipsync-runware', 'prompts', 'performance-default.md')
+  ).trim();
   const includeCost = parseBooleanFlag(named.get('--include-cost') || 'true', '--include-cost');
   const includeReport = parseBooleanFlag(named.get('--include-report') || 'true', '--include-report');
   const pollIntervalMs = Number((named.get('--poll-interval-ms') || '5000').trim());
   const timeoutMs = Number((named.get('--timeout-ms') || '600000').trim());
 
-  if (!videoPath || !audioPath || !model) usage();
-  if (!SUPPORTED_MODELS.has(model as 'pixverse:lipsync@1' | 'klingai:7@1')) {
-    throw new Error(`Unsupported model: ${model}. Supported models: pixverse:lipsync@1, klingai:7@1`);
+  if (!audioPath || !model) usage();
+  if (!SUPPORTED_MODELS.has(model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast')) {
+    throw new Error(
+      `Unsupported model: ${model}. Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast`
+    );
+  }
+
+  if (isSeedanceModel(model)) {
+    if (!imagePath) {
+      throw new Error('--image is required for Seedance models.');
+    }
+  } else if (!videoPath) {
+    throw new Error('<videoPath> (or --video) is required for non-Seedance models.');
   }
   if (!Number.isFinite(pollIntervalMs) || pollIntervalMs < 1000) {
     throw new Error('--poll-interval-ms must be a number >= 1000');
@@ -75,10 +102,14 @@ export function parseCliArgs(argv: string[]): CliOptions {
   }
 
   return {
-    videoPath: path.resolve(videoPath),
+    videoPath: videoPath ? path.resolve(videoPath) : '',
+    imagePath: imagePath ? path.resolve(imagePath) : undefined,
     audioPath: path.resolve(audioPath),
     outputPath: outputPath ? path.resolve(outputPath) : undefined,
-    model: model as 'pixverse:lipsync@1' | 'klingai:7@1',
+    model: model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast',
+    promptFilePath: path.resolve(promptFilePath),
+    additionalPrompt: additionalPrompt || undefined,
+    prompt: '',
     includeCost,
     includeReport,
     pollIntervalMs,

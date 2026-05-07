@@ -13,9 +13,16 @@ const AUDIO_MIME: Record<string, string> = {
   '.flac': 'audio/flac',
 };
 
+const IMAGE_MIME: Record<string, string> = {
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.webp': 'image/webp',
+};
+
 function readMimeByExtension(filePath: string): string {
   const ext = path.extname(filePath).toLowerCase();
-  return VIDEO_MIME[ext] || AUDIO_MIME[ext] || 'application/octet-stream';
+  return VIDEO_MIME[ext] || AUDIO_MIME[ext] || IMAGE_MIME[ext] || 'application/octet-stream';
 }
 
 export async function assertFileExists(filePath: string): Promise<void> {
@@ -37,6 +44,10 @@ export async function fileToDataUri(filePath: string): Promise<string> {
   const mime = readMimeByExtension(filePath);
   const base64 = bytes.toString('base64');
   return `data:${mime};base64,${base64}`;
+}
+
+export async function readTextFile(filePath: string): Promise<string> {
+  return fs.readFile(filePath, 'utf8');
 }
 
 export async function downloadToFile(url: string, outputPath: string): Promise<void> {
