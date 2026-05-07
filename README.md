@@ -10,12 +10,17 @@ Official YumCut website and product landing page for creating viral short-form c
 
 ## Tools
 
-### `lipsync:runware`
+### [lipsync:runware]((scripts/lipsync-runware/README.md))
+
 Runware lip-sync generation from reference video and audio.
-[Tool README](scripts/lipsync-runware/README.md)
 Path: `scripts/lipsync-runware/index.ts`
 
-### `lipsync:vmodel`
+### [lipsync:vmodel]((scripts/lipsync-vmodel/README.md))
+
 VModel talking-photo lip-sync generation from image and audio.
-[Tool README](scripts/lipsync-vmodel/README.md)
 Path: `scripts/lipsync-vmodel/index.ts`
+
+### [character:new]((scripts/character-new/README.md))
+
+Generate one 9:16 styled character image from a text prompt using Codex subscription image generation.
+Path: `scripts/character-new/index.ts`

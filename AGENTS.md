@@ -7,7 +7,7 @@ Rules:
 - For every created/updated script, keep a short `scripts/NAME/README.md`.
 - When a new tool/script is created, register it in the main `README.md` with:
   - a very short description (no examples)
-  - a markdown link to `scripts/NAME/README.md`
+  - the tool title itself must be a markdown link to `scripts/NAME/README.md` (no separate `README` line)
   - a visible script path
 - In that README, always provide 2 run examples:
   - required command with only required params
