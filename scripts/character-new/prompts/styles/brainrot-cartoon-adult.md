@@ -1,0 +1,2 @@
+STYLE_NAME: brainrot-cartoon-adult
+STYLE_DESCRIPTION: upbeat 3D brainrot cartoon style that keeps the playful visual language of brainrot-kid but upgrades it for adult characters: coherent hybrid anatomy, cleaner fashion-forward silhouettes, more refined facial structure, nuanced materials, and controlled color contrast; keep forms rounded and stylized (not photoreal), with expressive eyes, polished CGI lighting, and social-feed-ready clarity; subjects must be clearly adult, non-explicit, and fully covered in public-safe attire.

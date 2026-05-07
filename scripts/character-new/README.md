@@ -8,30 +8,56 @@ Generate one 9:16 animated character image with Codex image generation using loc
 npm run character:new -- --prompt "friendly astronaut fox in mechanic overalls"
 ```
 
-## Brainrot Style
+## Prompt Files
 
-Main style preset file:
-`scripts/character-new/prompts/styles/brainrot.md`
+- `scripts/character-new/prompts/character-9x16.md` - Base 9:16 full-body character template.
+- `scripts/character-new/prompts/styles/tropitoon.md` - Glossy high-saturation mascot cartoon style.
+- `scripts/character-new/prompts/styles/brainrot-kid.md` - Bright playful hybrid-mascot brainrot style.
+- `scripts/character-new/prompts/styles/brainrot-detailed.md` - Balanced mature hybrid brainrot style.
+- `scripts/character-new/prompts/styles/brainrot-adult.md` - Mature editorial hybrid brainrot style.
+- `scripts/character-new/prompts/styles/brainrot-cartoon.md` - Mid-cartoon hybrid brainrot style.
+- `scripts/character-new/prompts/styles/brainrot-cartoon-adult.md` - Playful cartoon-adult hybrid brainrot style.
 
-Core brainrot behavior:
-- Fuses normally incompatible things into one physically connected character (not separate props).
-- Keeps one coherent anatomy with smooth material transitions.
-- Preserves a playful, polished, social-feed-ready 3D look.
+## Brainrot Examples
 
-Short-input example:
+Kid variation:
 
 ```bash
 npm run character:new -- \
   --prompt "macbook and banana" \
-  --style-file scripts/character-new/prompts/styles/brainrot.md
+  --style-file scripts/character-new/prompts/styles/brainrot-kid.md
 ```
 
-Extended-input example:
+Detailed variation:
 
 ```bash
 npm run character:new -- \
-  --prompt "macbook and banana, full-body character in a neon laundromat at midnight" \
-  --style-file scripts/character-new/prompts/styles/brainrot.md
+  --prompt "macbook and banana" \
+  --style-file scripts/character-new/prompts/styles/brainrot-detailed.md
+```
+
+Adult variation:
+
+```bash
+npm run character:new -- \
+  --prompt "macbook and banana" \
+  --style-file scripts/character-new/prompts/styles/brainrot-adult.md
+```
+
+Cartoon variation:
+
+```bash
+npm run character:new -- \
+  --prompt "macbook and banana" \
+  --style-file scripts/character-new/prompts/styles/brainrot-cartoon.md
+```
+
+Cartoon-adult variation:
+
+```bash
+npm run character:new -- \
+  --prompt "macbook and banana" \
+  --style-file scripts/character-new/prompts/styles/brainrot-cartoon-adult.md
 ```
 
 ## Full Params
@@ -48,19 +74,20 @@ npm run character:new -- \
   --include-report=true
 ```
 
-## Brainrot Generation Prompts (Exact)
+## Brainrot Generation Commands (Exact)
 
-1. `macbook and banana, full-body character in a neon laundromat at midnight`
-2. `vintage microphone and jellyfish, full-body character on a backstage jazz club set with velvet curtains`
-3. `espresso machine and hummingbird, full-body character on a rain-soaked city balcony at dawn`
-4. `skateboard and crocodile, full-body character in a rooftop greenhouse with string lights`
-5. `camping lantern and red panda, full-body character on a misty train-station platform at sunrise`
+```bash
+npm run character:new -- --prompt "macbook and banana, full-body character in a neon laundromat at midnight" --style-file scripts/character-new/prompts/styles/brainrot-kid.md --output tmp/character-new/brainrot-1-macbook-banana.png
+npm run character:new -- --prompt "vintage microphone and jellyfish, full-body character on a backstage jazz club set with velvet curtains" --style-file scripts/character-new/prompts/styles/brainrot-kid.md --output tmp/character-new/brainrot-2-microphone-jellyfish.png
+npm run character:new -- --prompt "espresso machine and hummingbird, full-body character on a rain-soaked city balcony at dawn" --style-file scripts/character-new/prompts/styles/brainrot-kid.md --output tmp/character-new/brainrot-3-espresso-hummingbird.png
+npm run character:new -- --prompt "skateboard and crocodile, full-body character in a rooftop greenhouse with string lights" --style-file scripts/character-new/prompts/styles/brainrot-kid.md --output tmp/character-new/brainrot-4-skateboard-crocodile.png
+npm run character:new -- --prompt "camping lantern and red panda, full-body character on a misty train-station platform at sunrise" --style-file scripts/character-new/prompts/styles/brainrot-kid.md --output tmp/character-new/brainrot-5-lantern-redpanda.png
+```
 
 ## Notes
 
 - Default auth path: `~/.codex/auth.json`.
 - Default style preset: `tropitoon`.
-- Brainrot style preset path: `scripts/character-new/prompts/styles/brainrot.md`.
 - Default prompt template path: `scripts/character-new/prompts/character-9x16.md`.
 - Prompts are stored in `scripts/character-new/prompts/*`.
 - By default, writes a sidecar JSON report with timing and cost (if available).

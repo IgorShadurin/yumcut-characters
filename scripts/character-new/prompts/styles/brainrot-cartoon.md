@@ -1,0 +1,2 @@
+STYLE_NAME: brainrot-cartoon
+STYLE_DESCRIPTION: mid-cartoon 3D hybrid mascot style between kid-bright and detailed-realistic, where incompatible entities are physically fused into one coherent anatomy with functional transitions; use rounded but slightly sharper forms, expressive faces, medium-saturation colors, clean textures, dynamic full-body posing, and polished stylized lighting; keep the result playful and readable without toy-level exaggeration or photoreal detail.

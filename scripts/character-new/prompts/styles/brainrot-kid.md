@@ -1,2 +1,2 @@
-STYLE_NAME: brainrot
+STYLE_NAME: brainrot-kid
 STYLE_DESCRIPTION: ultra-cartoon 3D mascot style inspired by cheerful ad mascots, where two normally incompatible entities are fused into one coherent character with a single shared anatomy; the fusion must be structural and functional (not props or costumes), with clean toy-like surfaces, simplified forms, rounded edges, oversized expressive eyes, broad friendly smile, short chunky limbs or rubber-hose limbs, saturated colors, bright sunny lighting, polished CGI shading, and playful full-body pose; avoid photorealism, avoid realistic skin/fur detail, avoid gritty textures, and avoid cinematic realism.
