@@ -23,6 +23,20 @@ export async function readTextFile(filePath: string): Promise<string> {
   return fs.readFile(filePath, 'utf8');
 }
 
+function detectImageMediaType(filePath: string): string {
+  const ext = path.extname(filePath).toLowerCase();
+  if (ext === '.png') return 'image/png';
+  if (ext === '.jpg' || ext === '.jpeg') return 'image/jpeg';
+  if (ext === '.webp') return 'image/webp';
+  throw new Error(`Unsupported guide image extension: ${ext}. Use .png, .jpg, .jpeg, or .webp`);
+}
+
+export async function readImageFileAsDataUrl(filePath: string): Promise<string> {
+  const mediaType = detectImageMediaType(filePath);
+  const bytes = await fs.readFile(filePath);
+  return `data:${mediaType};base64,${bytes.toString('base64')}`;
+}
+
 export async function writeBinaryFile(filePath: string, bytes: Buffer): Promise<void> {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
   await fs.writeFile(filePath, bytes);

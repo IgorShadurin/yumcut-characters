@@ -23,7 +23,8 @@ Universal safe-zone framing requirements for short-form platforms (Instagram Ree
 - Keep right-side UI-risk band clear of critical details: x=930..1080.
 - Keep the four corners non-critical (background-only), because platform UI/crops vary by device and placement.
 - Do not place essential anatomy, expressions, or small details on screen edges; maintain clear inner padding.
-- Enforce minimum clear margins for the full silhouette: top >= 12% canvas height, bottom >= 12%, left >= 14% canvas width, right >= 14%.
-- Keep character scale compact: full silhouette width should be about 48% to 62% of canvas width.
+- Enforce minimum clear margins for the full silhouette: top >= 18% canvas height, bottom >= 18%, left >= 16% canvas width, right >= 16%.
+- Keep character scale compact: full silhouette width should be about 40% to 52% of canvas width, and full silhouette height about 58% to 72% of canvas height.
 - Avoid wide lateral extensions; keep tails, wings, props, feathers, and accessories folded/compact and contained inside the silhouette box.
 - If framing conflict appears, scale the character down and recenter instead of letting any part exit the safe silhouette box.
+- If a guide template image is provided, use it only as an invisible composition reference and never render the template/lines/labels in the final output.

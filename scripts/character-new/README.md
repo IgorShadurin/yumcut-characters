@@ -11,6 +11,7 @@ npm run character:new -- --prompt "friendly astronaut fox in mechanic overalls"
 ## Prompt Files
 
 - `scripts/character-new/prompts/character-9x16.md` - Base 9:16 full-body character template.
+- `scripts/character-new/prompts/safezone-template-9x16.png` - Composition guide image for safe-zone framing (reference only).
 - `scripts/character-new/prompts/styles/tropitoon.md` - Glossy high-saturation mascot cartoon style.
 - `scripts/character-new/prompts/styles/brainrot-kid.md` - Bright playful hybrid-mascot brainrot style.
 - `scripts/character-new/prompts/styles/brainrot-detailed.md` - Balanced mature hybrid brainrot style.
@@ -68,11 +69,26 @@ npm run character:new -- \
   --output /path/to/output.png \
   --auth-path /Users/your-user/.codex/auth.json \
   --prompt-file /path/to/character-9x16.md \
+  --guide-image /path/to/safezone-template-9x16.png \
   --style-file /path/to/style.md \
   --model gpt-5.4 \
   --include-cost=true \
   --include-report=true
 ```
+
+## Safe-Zone Guide Usage
+
+Use the guide template as an input reference so composition stays inside short-form safe zones:
+
+```bash
+npm run character:new -- \
+  --prompt "adult female character: camera and cheetah hybrid, full-body in a fashion editorial set, compact silhouette" \
+  --style-file scripts/character-new/prompts/styles/brainrot-adult.md \
+  --guide-image scripts/character-new/prompts/safezone-template-9x16.png \
+  --output tmp/character-new-brainrot-adult-v3-safezone/woman-4-camera-cheetah.png
+```
+
+The guide image is reference-only and should never appear in the final output.
 
 ## Brainrot Generation Commands (Exact)
 
@@ -90,6 +106,7 @@ npm run character:new -- --prompt "camping lantern and red panda, full-body char
 - Default style preset: `tropitoon`.
 - Default prompt template path: `scripts/character-new/prompts/character-9x16.md`.
 - Prompts are stored in `scripts/character-new/prompts/*`.
+- Optional guide image input: `--guide-image`.
 - By default, writes a sidecar JSON report with timing and cost (if available).
 - Disable cost fields: `--no-cost`.
 - Disable JSON report creation: `--no-report`.

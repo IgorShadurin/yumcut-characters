@@ -4,6 +4,7 @@ export interface CliOptions {
   authPath: string;
   promptFilePath: string;
   styleFilePath: string;
+  guideImagePath?: string;
   model: string;
   includeCost: boolean;
   includeReport: boolean;

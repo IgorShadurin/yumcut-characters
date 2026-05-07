@@ -6,7 +6,9 @@ import type { CliOptions } from '../interfaces/options';
 function usage(): never {
   console.error('Usage: npm run character:new -- --prompt "character description" [--output /path/to/file.png]');
   console.error('Example: npm run character:new -- --prompt "friendly robot barista with red apron"');
-  console.error('Flags: --auth-path, --prompt-file, --style-file, --model, --include-cost=<true|false>, --no-cost, --include-report=<true|false>, --no-report');
+  console.error(
+    'Flags: --auth-path, --prompt-file, --style-file, --guide-image, --model, --include-cost=<true|false>, --no-cost, --include-report=<true|false>, --no-report'
+  );
   process.exit(1);
 }
 
@@ -58,6 +60,7 @@ export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
     (named.get('--prompt-file') || path.join(projectRoot, 'scripts', 'character-new', 'prompts', 'character-9x16.md')).trim();
   const styleFilePath =
     (named.get('--style-file') || path.join(projectRoot, 'scripts', 'character-new', 'prompts', 'styles', 'tropitoon.md')).trim();
+  const guideImagePath = (named.get('--guide-image') || '').trim();
   const model = (named.get('--model') || 'gpt-5.4').trim();
   const includeCost = parseBooleanFlag(named.get('--include-cost') || 'true', '--include-cost');
   const includeReport = parseBooleanFlag(named.get('--include-report') || 'true', '--include-report');
@@ -68,6 +71,7 @@ export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
     authPath: path.resolve(authPath),
     promptFilePath: path.resolve(promptFilePath),
     styleFilePath: path.resolve(styleFilePath),
+    guideImagePath: guideImagePath ? path.resolve(guideImagePath) : undefined,
     model,
     includeCost,
     includeReport,

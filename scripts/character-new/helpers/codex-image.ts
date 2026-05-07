@@ -7,6 +7,8 @@ function buildInstructions(): string {
     'Generate exactly one image.',
     'Do not return assistant text.',
     'Use the image_generation tool.',
+    'If a guide image is provided, use it only for composition/framing reference.',
+    'Never render, copy, or display the guide image, guide lines, boxes, labels, or any overlay elements in the final output.',
   ].join('\n');
 }
 
@@ -89,8 +91,21 @@ async function readStream(response: Response): Promise<GeneratedImageResult & { 
 export async function generateCharacterImage(
   auth: CodexAuth,
   model: string,
-  prompt: string
+  prompt: string,
+  guideImageDataUrl?: string
 ): Promise<GeneratedImageResult & { costUsd: number | null }> {
+  const content: Array<{ type: 'input_image'; image_url: string } | { type: 'input_text'; text: string }> = [];
+  if (guideImageDataUrl) {
+    content.push({
+      type: 'input_image',
+      image_url: guideImageDataUrl,
+    });
+  }
+  content.push({
+    type: 'input_text',
+    text: prompt.trim(),
+  });
+
   const response = await fetch(`${auth.chatgptBaseUrl}/codex/responses`, {
     method: 'POST',
     headers: {
@@ -104,12 +119,7 @@ export async function generateCharacterImage(
       input: [
         {
           role: 'user',
-          content: [
-            {
-              type: 'input_text',
-              text: prompt.trim(),
-            },
-          ],
+          content,
         },
       ],
       reasoning: {

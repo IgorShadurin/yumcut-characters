@@ -6,6 +6,7 @@ import { generateCharacterImage } from './helpers/codex-image';
 import {
   assertFileExists,
   defaultOutputPath,
+  readImageFileAsDataUrl,
   readTextFile,
   sidecarJsonPath,
   writeBinaryFile,
@@ -22,11 +23,15 @@ async function main(): Promise<void> {
   await assertFileExists(options.authPath);
   await assertFileExists(options.promptFilePath);
   await assertFileExists(options.styleFilePath);
+  if (options.guideImagePath) {
+    await assertFileExists(options.guideImagePath);
+  }
 
-  const [promptTemplate, styleRaw, auth] = await Promise.all([
+  const [promptTemplate, styleRaw, auth, guideImageDataUrl] = await Promise.all([
     readTextFile(options.promptFilePath),
     readTextFile(options.styleFilePath),
     readCodexAuth(options.authPath),
+    options.guideImagePath ? readImageFileAsDataUrl(options.guideImagePath) : Promise.resolve(undefined),
   ]);
 
   const stylePreset = parseStylePreset(styleRaw);
@@ -37,8 +42,11 @@ async function main(): Promise<void> {
 
   console.log(`Generating character with model: ${options.model}`);
   console.log(`Style preset: ${stylePreset.name}`);
+  if (options.guideImagePath) {
+    console.log(`Guide image: ${options.guideImagePath}`);
+  }
 
-  const result = await generateCharacterImage(auth, options.model, finalPrompt);
+  const result = await generateCharacterImage(auth, options.model, finalPrompt, guideImageDataUrl);
   const imageBytes = Buffer.from(result.imageBase64, 'base64');
   await writeBinaryFile(outputPath, imageBytes);
 
@@ -63,6 +71,7 @@ async function main(): Promise<void> {
       prompt: {
         input: options.prompt,
         templatePath: options.promptFilePath,
+        guideImagePath: options.guideImagePath || null,
       },
       auth: {
         authPath: options.authPath,
