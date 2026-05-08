@@ -39,7 +39,7 @@ npm run lipsync:runware -- \
 
 ## Model Notes
 
-- `--model` is required.
+- `--model` default: `prunaai:p-video@0`.
 - Supported hardcoded models:
   - `pixverse:lipsync@1`
   - `klingai:7@1`

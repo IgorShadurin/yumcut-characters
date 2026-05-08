@@ -19,7 +19,7 @@ function isPVideoModel(model: string): model is 'prunaai:p-video@0' {
 }
 
 function usage(): never {
-  console.error('Usage: npm run lipsync:runware -- <videoPath> --audio <audioPath> --model <model> [--output <outputPath>]');
+  console.error('Usage: npm run lipsync:runware -- <videoPath> --audio <audioPath> [--model <model>] [--output <outputPath>]');
   console.error('Example: npm run lipsync:runware -- ./video.mp4 --audio ./voice.wav --model pixverse:lipsync@1 --output ./tmp/lipsync-runware/out.mp4');
   console.error('Seedance example: npm run lipsync:runware -- --image ./image.png --audio ./voice.wav --model bytedance:seedance@2.0 --output ./tmp/lipsync-runware/out.mp4');
   console.error('P-Video example: npm run lipsync:runware -- --image ./image.png --audio ./voice.wav --model prunaai:p-video@0 --output ./tmp/lipsync-runware/out.mp4');
@@ -78,7 +78,7 @@ export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
   const imagePath = (named.get('--image') || '').trim();
   const audioPath = (named.get('--audio') || '').trim();
   const outputPath = (named.get('--output') || '').trim();
-  const model = (named.get('--model') || '').trim();
+  const model = (named.get('--model') || 'prunaai:p-video@0').trim();
   const additionalPrompt = (named.get('--prompt') || '').trim();
   const promptFilePath = (
     named.get('--prompt-file') || path.join(projectRoot, 'scripts', 'lipsync-runware', 'prompts', 'performance-default.md')
@@ -88,7 +88,7 @@ export function parseCliArgs(argv: string[], projectRoot: string): CliOptions {
   const pollIntervalMs = Number((named.get('--poll-interval-ms') || '5000').trim());
   const timeoutMs = Number((named.get('--timeout-ms') || '600000').trim());
 
-  if (!audioPath || !model) usage();
+  if (!audioPath) usage();
   if (!SUPPORTED_MODELS.has(model as 'pixverse:lipsync@1' | 'klingai:7@1' | 'bytedance:seedance@2.0' | 'bytedance:seedance@2.0-fast' | 'prunaai:p-video@0')) {
     throw new Error(
       `Unsupported model: ${model}. Supported models: pixverse:lipsync@1, klingai:7@1, bytedance:seedance@2.0, bytedance:seedance@2.0-fast, prunaai:p-video@0`
